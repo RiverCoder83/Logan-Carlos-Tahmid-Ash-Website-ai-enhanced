@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Logan, Carlos, Tahmid, and Ash's Webpage</title>
+</head>
+<body>
+    <h1>Personal Websites</h1>
+    <div id="navBar">
+        <a href = "index.html">Home</a>
+        <a href = "github.html">GitHub</a>
+        <a href = "websites.html">Personal Sites</a>
+        <button id="darkModeButton">Dark Mode</button>
+    </div>
+    <h3>Welcome, to our Capstone Project.</h3>
+    <p>This was created with the help of Logan B, Carlos B, Tahmid A</p>
+
+    <a href="https://rivercoder83.github.io/" target="_blank">Logan's Website</a>
+
+    <a href="images/carlosWebpage.png" target="_blank">Carlos's Website</a>
+
+    <a href="mySite.html" target="_blank">Tahmid's Website</a>
+
+    <script>
+        const toggle = document.getElementById('darkModeButton');
+
+        toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        // Optionally: Save preference to localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+        });
+
+        // On page load, check for saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
